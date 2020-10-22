@@ -1,0 +1,27 @@
+import subprocess
+import os
+import pandas as pds
+
+
+def getAttributes():
+    fashionData = pds.read_csv('styles.csv')
+    idList = {}
+    for i in range(len(fashionData)):
+        if fashionData['subCategory'][i] in idList:
+            idList[fashionData['subCategory'][i]].append(fashionData['id'][i])
+        else:
+            idList[fashionData['subCategory'][i]] = [fashionData['id'][i]]
+    return idList
+
+def createDirectories(idList):
+    os.chdir(os.path.join(os.path.dirname(os.getcwd()), "data"))
+    for clothType in idList:
+        subprocess.run(["mkdir", clothType])
+        for clothID in idList[clothType]:
+            print(clothID)
+            subprocess.run(["mv", "images/" + str(clothID) + ".jpg", clothType])
+
+
+if __name__ == "__main__":
+   idList =  getAttributes()
+   createDirectories(idList)
