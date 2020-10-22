@@ -4,7 +4,7 @@ import pandas as pds
 
 
 def getAttributes():
-    styleCSVPath = os.path.join(os.path.dirname(os.getcwd()), "data", "fasion-dataset")
+    styleCSVPath = os.path.join(os.path.dirname(os.getcwd()), "data", "fashion-dataset")
     fashionData = pds.read_csv(os.path.join(styleCSVPath, 'styles.csv'))
     idList = {}
     for i in range(len(fashionData)):
