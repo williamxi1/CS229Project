@@ -4,7 +4,8 @@ import pandas as pds
 
 
 def getAttributes():
-    fashionData = pds.read_csv('styles.csv')
+    styleCSVPath = os.join(os.path.dirname(os.getcwd()), "data", "fasion-dataset")
+    fashionData = pds.read_csv(os.path.join(styleCSVPath, 'styles.csv'))
     idList = {}
     for i in range(len(fashionData)):
         if fashionData['subCategory'][i] in idList:
