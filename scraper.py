@@ -14,7 +14,7 @@ def getAttributes():
     return idList
 
 def createDirectories(idList):
-    os.chdir(os.path.join(os.path.dirname(os.getcwd()), "data"))
+    os.chdir(os.path.join(os.path.dirname(os.getcwd()), "data/fashion-dataset"))
     for clothType in idList:
         subprocess.run(["mkdir", clothType])
         for clothID in idList[clothType]:
