@@ -116,10 +116,10 @@ generator.apply(weights_init_normal)
 discriminator.apply(weights_init_normal)
 
 # Configure data loader
-os.makedirs("../../data/mnist", exist_ok=True)
+os.makedirs("../data/mnist", exist_ok=True)
 dataloader = torch.utils.data.DataLoader(
     datasets.MNIST(
-        "../../data/mnist",
+        "../data/mnist",
         train=True,
         download=True,
         transform=transforms.Compose(
