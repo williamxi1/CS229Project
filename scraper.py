@@ -19,7 +19,6 @@ def createDirectories(idList):
     for clothType in idList:
         subprocess.run(["mkdir", clothType])
         for clothID in idList[clothType]:
-            print(clothID)
             subprocess.run(["mv", "images/" + str(clothID) + ".jpg", clothType])
 
 
