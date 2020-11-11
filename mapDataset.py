@@ -11,8 +11,7 @@ from torchvision import transforms, utils
 class ToTensor(object):
     """Convert ndarrays in sample to Tensors."""
 
-    def __call__(self, sample):
-        image, category = sample['image'], sample['category']
+    def __call__(self, image):
 
         # swap color axis because
         # numpy image: H x W x C
@@ -33,8 +32,7 @@ class Rescale(object):
         assert isinstance(output_size, (int, tuple))
         self.output_size = output_size
 
-    def __call__(self, sample):
-        image, category = sample['image'], sample['category']
+    def __call__(self, image):
 
         h, w = image.shape[:2]
         if isinstance(self.output_size, int):
@@ -48,8 +46,6 @@ class Rescale(object):
         new_h, new_w = int(new_h), int(new_w)
 
         img = transform.resize(image, (new_h, new_w))
-
-
         return img
 
 
@@ -84,7 +80,7 @@ class FashionDataset(Dataset):
         sample = {'image': image, 'category': catagory}
 
         if self.transform:
-            sample["image"]  = self.transform(sample["image"])
+            sample['image'] = self.transform(sample['image'])
 
         return sample
 
