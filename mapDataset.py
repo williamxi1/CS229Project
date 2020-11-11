@@ -84,7 +84,7 @@ class FashionDataset(Dataset):
         sample = {'image': image, 'category': catagory}
 
         if self.transform:
-            sample = self.transform(sample)
+            sample[image]  = self.transform(sample[image])
 
         return sample
 
