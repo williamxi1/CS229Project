@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 
+
 # Ignore warnings
 import warnings
 class FashionDataset(Dataset):
@@ -26,7 +27,7 @@ class FashionDataset(Dataset):
         self.transform = transform
 
     def __len__(self):
-        return len(self.fasion_frame)
+        return len(self.fashion_frame)
 
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
@@ -43,22 +44,15 @@ class FashionDataset(Dataset):
 
         return sample
 
-shoe_dataset = FashionDataset(csv_file='data/faces/face_landmarks.csv',
-                                    root_dir='data/faces/')
 
-fig = plt.figure()
+shoe_dataset = FashionDataset(csv_file='../data/shoes.csv',
+                                    root_dir='../data/Shoes/')
+
+
 
 for i in range(len(shoe_dataset)):
     sample = shoe_dataset[i]
 
-    print(i, sample['image'].shape, sample['category'].shape)
-
-    ax = plt.subplot(1, 4, i + 1)
-    plt.tight_layout()
-    ax.set_title('Sample #{}'.format(i))
-    ax.axis('off')
-    show_landmarks(**sample)
-
-    if i == 3:
-        plt.show()
-        break
+    print(i, sample['image'].shape, sample['category'])
+    plt.imshow(sample['image'])
+    plt.show()

@@ -22,6 +22,7 @@ def createDirectories(idList):
             subprocess.run(["mv", "images/" + str(clothID) + ".jpg", clothType])
 
 
+
 if __name__ == "__main__":
    idList =  getAttributes()
    createDirectories(idList)
