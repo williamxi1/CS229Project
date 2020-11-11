@@ -94,8 +94,8 @@ class FashionDataset(Dataset):
 
 
 
-shoe_dataset = FashionDataset(csv_file='../data/shoes.csv',
-                                    root_dir='../data/Shoes/')
+shoe_dataset = FashionDataset(csv_file='../data/fashion-dataset/shoes.csv',
+                                    root_dir='../data/fastion-dataset/Shoes/')
 
 for i in range(len(shoe_dataset)):
     sample = scale(shoe_dataset[i])
