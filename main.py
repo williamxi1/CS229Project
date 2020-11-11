@@ -124,7 +124,7 @@ discriminator.apply(weights_init_normal)
 # Configure data loader
 dataloader = torch.utils.data.DataLoader(
     FashionDataset(
-        "../data/shoes.csv",
+        "../data/fashion-dataset/shoes.csv",
         "../data/fashion-dataset/Shoes",
         transform=transforms.Compose(
             [ToTensor(), Rescale((64,64))]

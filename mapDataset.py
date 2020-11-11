@@ -90,16 +90,3 @@ class FashionDataset(Dataset):
 
 
 
-
-
-
-
-shoe_dataset = FashionDataset(csv_file='../data/fashion-dataset/shoes.csv',
-                                    root_dir='../data/fastion-dataset/Shoes/')
-
-for i in range(len(shoe_dataset)):
-    sample = scale(shoe_dataset[i])
-    sample = tensor
-    print(i, sample['image'].shape, sample['category'])
-    plt.imshow(sample['image'])
-    plt.show()
