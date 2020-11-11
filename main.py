@@ -3,6 +3,11 @@ import os
 import numpy as np
 import math
 
+
+import matplotlib.pyplot as plt
+import matplotlib.image as img
+import torchvision
+
 import torchvision.transforms as transforms
 from torchvision.utils import save_image
 
@@ -14,7 +19,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch
 
-os.makedirs("images", exist_ok=True)
+#os.makedirs("images", exist_ok=True)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--n_epochs", type=int, default=200, help="number of epochs of training")
@@ -136,6 +141,7 @@ optimizer_D = torch.optim.Adam(discriminator.parameters(), lr=opt.lr, betas=(opt
 
 Tensor = torch.cuda.FloatTensor if cuda else torch.FloatTensor
 
+print(generator)
 # ----------
 #  Training
 # ----------
@@ -190,3 +196,4 @@ for epoch in range(opt.n_epochs):
         batches_done = epoch * len(dataloader) + i
         if batches_done % opt.sample_interval == 0:
             save_image(gen_imgs.data[:25], "images/%d.png" % batches_done, nrow=5, normalize=True)
+
