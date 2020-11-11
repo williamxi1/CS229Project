@@ -8,6 +8,19 @@ import matplotlib.pyplot as plt
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 
+class ToTensor(object):
+    """Convert ndarrays in sample to Tensors."""
+
+    def __call__(self, sample):
+        image, category = sample['image'], sample['category']
+
+        # swap color axis because
+        # numpy image: H x W x C
+        # torch image: C X H X W
+        image = image.transpose((2, 0, 1))
+        return {'image': torch.from_numpy(image),
+                'category': torch.from_numpy(category)}
+
 class Rescale(object):
     """Rescale the image in a sample to a given size.
 
@@ -86,10 +99,10 @@ class FashionDataset(Dataset):
 shoe_dataset = FashionDataset(csv_file='../data/shoes.csv',
                                     root_dir='../data/Shoes/')
 scale = Rescale((256,256))
-
+tensor =  ToTensor()
 for i in range(len(shoe_dataset)):
     sample = scale(shoe_dataset[i])
-
+    sample = tensor
     print(i, sample['image'].shape, sample['category'])
     plt.imshow(sample['image'])
     plt.show()
