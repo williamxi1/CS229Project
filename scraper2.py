@@ -3,10 +3,9 @@ import os
 import csv
 
 def createCSV(csvName):
-    os.chdir(os.path.join(os.path.dirname(os.getcwd()), 'data', 'Shoes'))
+    os.chdir(os.path.join(os.path.dirname(os.getcwd()), 'data', 'fashion-dataset', 'Shoes'))
     output = str(subprocess.check_output(['ls']))
     imgsList= output[2:-3].split("\\n")
-
     with open(csvName, 'w') as f:
         writer = csv.writer(f)
         for img in imgsList:

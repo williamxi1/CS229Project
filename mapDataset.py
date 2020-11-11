@@ -18,8 +18,7 @@ class ToTensor(object):
         # numpy image: H x W x C
         # torch image: C X H X W
         image = image.transpose((2, 0, 1))
-        return {'image': torch.from_numpy(image),
-                'category': torch.from_numpy(category)}
+        return torch.from_numpy(image)
 
 class Rescale(object):
     """Rescale the image in a sample to a given size.
@@ -51,8 +50,7 @@ class Rescale(object):
         img = transform.resize(image, (new_h, new_w))
 
 
-
-        return {'image': img, 'category': category}
+        return img
 
 
 # Ignore warnings
@@ -98,8 +96,7 @@ class FashionDataset(Dataset):
 
 shoe_dataset = FashionDataset(csv_file='../data/shoes.csv',
                                     root_dir='../data/Shoes/')
-scale = Rescale((256,256))
-tensor =  ToTensor()
+
 for i in range(len(shoe_dataset)):
     sample = scale(shoe_dataset[i])
     sample = tensor
