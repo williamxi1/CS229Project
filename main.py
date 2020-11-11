@@ -147,6 +147,7 @@ print(generator)
 
 for epoch in range(opt.n_epochs):
     for i, (imgs, _) in enumerate(dataloader):
+        print(imgs)
 
         # Adversarial ground truths
         valid = Variable(Tensor(imgs.shape[0], 1).fill_(1.0), requires_grad=False)
