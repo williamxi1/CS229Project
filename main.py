@@ -150,10 +150,12 @@ for epoch in range(opt.n_epochs):
     for i, sample in enumerate(dataloader):
         imgs = sample["image"]
         # Adversarial ground truths
+        print("Generating real/fake vars")
         valid = Variable(Tensor(imgs.shape[0], 1).fill_(1.0), requires_grad=False)
         fake = Variable(Tensor(imgs.shape[0], 1).fill_(0.0), requires_grad=False)
 
         # Configure input
+        print("Configure Input")
         real_imgs = Variable(imgs.type(Tensor))
 
         # -----------------
@@ -166,26 +168,30 @@ for epoch in range(opt.n_epochs):
         z = Variable(Tensor(np.random.normal(0, 1, (imgs.shape[0], opt.latent_dim))))
 
         # Generate a batch of images
+        print("Gen Batch")
         gen_imgs = generator(z)
 
         # Loss measures generator's ability to fool the discriminator
+        print("Gen Loss")
         g_loss = adversarial_loss(discriminator(gen_imgs), valid)
-
+        print("Gen Backprop")
         g_loss.backward()
         optimizer_G.step()
 
         # ---------------------
         #  Train Discriminator
         # ---------------------
-
+        print("Dis Train")
         optimizer_D.zero_grad()
 
-        print(real_imgs.shape, gen_imgs.shape)
+        #print(real_imgs.shape, gen_imgs.shape)
 
         # Measure discriminator's ability to classify real from generated samples
         real_loss = adversarial_loss(discriminator(real_imgs), valid)
         fake_loss = adversarial_loss(discriminator(gen_imgs.detach()), fake)
         d_loss = (real_loss + fake_loss) / 2
+
+        print("Dis Backprop")
         d_loss.backward()
         optimizer_D.step()
 
