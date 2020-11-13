@@ -127,7 +127,7 @@ dataloader = torch.utils.data.DataLoader(
         "../data/fashion-dataset/shoes.csv",
         "../data/fashion-dataset/Shoes",
         transform=transforms.Compose(
-            [Rescale(64) , ToTensor()]
+            [Rescale(64), ToTensor()]
         ),
     ),
     batch_size=opt.batch_size,
@@ -178,6 +178,8 @@ for epoch in range(opt.n_epochs):
         # ---------------------
 
         optimizer_D.zero_grad()
+
+        print(real_imgs.shape, valid.shape, discriminator(real_imgs).shape)
 
         # Measure discriminator's ability to classify real from generated samples
         real_loss = adversarial_loss(discriminator(real_imgs), valid)
