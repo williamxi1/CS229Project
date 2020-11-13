@@ -3,7 +3,7 @@ import os
 from PIL import Image
 
 def modifyImgs():
-    os.chdir(os.path.join(os.path.dirname(os.getcwd()), 'data', 'Shoes'))
+    os.chdir(os.path.join(os.path.dirname(os.getcwd()), 'data', 'fashion-dataset', 'Shoes'))
     output = str(subprocess.check_output(['ls']))
     imgsList= output[2:-3].split("\\n")
     os.chdir(os.path.dirname(os.getcwd()))
