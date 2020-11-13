@@ -1,6 +1,7 @@
 import subprocess
 import os
 from PIL import Image
+import csv
 
 def modifyImgs():
     os.chdir(os.path.join(os.path.dirname(os.getcwd()), 'data', 'fashion-dataset', 'Shoes'))
