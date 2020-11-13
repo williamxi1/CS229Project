@@ -113,6 +113,7 @@ generator = Generator()
 discriminator = Discriminator()
 
 if cuda:
+    print("Using GPU")
     generator.cuda()
     discriminator.cuda()
     adversarial_loss.cuda()
