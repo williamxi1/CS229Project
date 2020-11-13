@@ -13,7 +13,7 @@ def modifyImgs():
     with open("shoesResized.csv", 'w') as f:
         writer = csv.writer(f)
         for img in imgsList:
-            print(imgfile)
+            print(img)
             im = Image.open('Shoes/' + imgfile)
             print(im.size)
             try:
