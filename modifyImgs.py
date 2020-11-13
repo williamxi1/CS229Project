@@ -1,6 +1,6 @@
 import subprocess
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 import csv
 
 def modifyImgs():
@@ -18,6 +18,7 @@ def modifyImgs():
             print(im.size)
             try:
                 im = im.resize((64, 64))
+                im = ImageOps.grayscale(im)
                 print(im.size)
                 im.save('ShoesResized/' + img)
                 writer.writerow([img, "Shoe"])
