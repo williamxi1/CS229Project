@@ -128,7 +128,7 @@ dataloader = torch.utils.data.DataLoader(
         "../data/fashion-dataset/shoes.csv",
         "../data/fashion-dataset/Shoes",
         transform=transforms.Compose(
-            [Rescale((32,32)), ToTensor()]
+            [ToTensor()]
         ),
     ),
     batch_size=opt.batch_size,
