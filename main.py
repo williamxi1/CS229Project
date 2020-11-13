@@ -23,8 +23,8 @@ from mapDataset import ToTensor, Rescale, FashionDataset
 #os.makedirs("images", exist_ok=True)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--n_epochs", type=int, default=50, help="number of epochs of training")
-parser.add_argument("--batch_size", type=int, default=32, help="size of the batches")
+parser.add_argument("--n_epochs", type=int, default=200, help="number of epochs of training")
+parser.add_argument("--batch_size", type=int, default=64, help="size of the batches")
 parser.add_argument("--lr", type=float, default=0.0002, help="adam: learning rate")
 parser.add_argument("--b1", type=float, default=0.5, help="adam: decay of first order momentum of gradient")
 parser.add_argument("--b2", type=float, default=0.999, help="adam: decay of first order momentum of gradient")
@@ -32,7 +32,7 @@ parser.add_argument("--n_cpu", type=int, default=8, help="number of cpu threads 
 parser.add_argument("--latent_dim", type=int, default=100, help="dimensionality of the latentgit  space")
 parser.add_argument("--img_size", type=int, default=128, help="size of each image dimension")
 parser.add_argument("--channels", type=int, default=3, help="number of image channels")
-parser.add_argument("--sample_interval", type=int, default=200, help="interval between image sampling")
+parser.add_argument("--sample_interval", type=int, default=400, help="interval between image sampling")
 opt = parser.parse_args()
 print(opt)
 
@@ -151,12 +151,12 @@ for epoch in range(opt.n_epochs):
     for i, sample in enumerate(dataloader):
         imgs = sample["image"]
         # Adversarial ground truths
-        print("Generating real/fake vars")
+        #print("Generating real/fake vars")
         valid = Variable(Tensor(imgs.shape[0], 1).fill_(1.0), requires_grad=False)
         fake = Variable(Tensor(imgs.shape[0], 1).fill_(0.0), requires_grad=False)
 
         # Configure input
-        print("Configure Input")
+        #print("Configure Input")
         real_imgs = Variable(imgs.type(Tensor))
 
         # -----------------
@@ -169,20 +169,20 @@ for epoch in range(opt.n_epochs):
         z = Variable(Tensor(np.random.normal(0, 1, (imgs.shape[0], opt.latent_dim))))
 
         # Generate a batch of images
-        print("Gen Batch")
+        #print("Gen Batch")
         gen_imgs = generator(z)
 
         # Loss measures generator's ability to fool the discriminator
-        print("Gen Loss")
+        #print("Gen Loss")
         g_loss = adversarial_loss(discriminator(gen_imgs), valid)
-        print("Gen Backprop")
+        #print("Gen Backprop")
         g_loss.backward()
         optimizer_G.step()
 
         # ---------------------
         #  Train Discriminator
         # ---------------------
-        print("Dis Train")
+        #print("Dis Train")
         optimizer_D.zero_grad()
 
         #print(real_imgs.shape, gen_imgs.shape)
@@ -192,7 +192,7 @@ for epoch in range(opt.n_epochs):
         fake_loss = adversarial_loss(discriminator(gen_imgs.detach()), fake)
         d_loss = (real_loss + fake_loss) / 2
 
-        print("Dis Backprop")
+        #print("Dis Backprop")
         d_loss.backward()
         optimizer_D.step()
 
