@@ -19,7 +19,7 @@ def modifyImgs():
             try:
                 im = im.resize((128, 128))
                 print(im.size)
-                im.save('ShoesResized/' + imgfile)
+                im.save('ShoesResized/' + img)
                 writer.writerow([img, "Shoe"])
             except:
                 print("image not valid")
