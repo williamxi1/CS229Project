@@ -17,7 +17,7 @@ def modifyImgs():
             im = Image.open('Shoes/' + img)
             print(im.size)
             try:
-                im = im.resize((128, 128))
+                im = im.resize((64, 64))
                 print(im.size)
                 im.save('ShoesResized/' + img)
                 writer.writerow([img, "Shoe"])
