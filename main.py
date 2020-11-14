@@ -129,7 +129,7 @@ dataloader = torch.utils.data.DataLoader(
         "../data/fashion-dataset/ShoesResized",
         transform=transforms.Compose(
             [ToTensor(),
-             transforms.Normalize((0.5), (0.5))
+             transforms.Normalize([0.5], [0.5])
              ]
         ),
     ),
