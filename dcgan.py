@@ -183,7 +183,7 @@ for epoch in range(num_epochs):
         ## Train with all-real batch
         netD.zero_grad()
         # Format batch
-        real_cpu = data[0].to(device)
+        real_cpu = data["image"].to(device)
         b_size = real_cpu.size(0)
         label = torch.full((b_size,), real_label, dtype=torch.float, device=device)
         # Forward pass real batch through D
