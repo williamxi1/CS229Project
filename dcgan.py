@@ -24,7 +24,7 @@ random.seed(manualSeed)
 torch.manual_seed(manualSeed)
 
 
-dataroot = "data/celeba" #Root directory for dataset
+#dataroot = "data/celeba" #Root directory for dataset
 workers = 2 #Number of workers for dataloader
 batch_size = 64 #Batch size during training
 image_size = 64 #Spatial size of training images. All images will be resized to this size using a transformer.
@@ -37,13 +37,6 @@ lr = 0.0002 # Learning rate for optimizers
 beta1 = 0.5 # Beta1 hyperparam for Adam optimizers
 ngpu = 1 # Number of GPUs available. Use 0 for CPU mode.
 
-dataset = dset.ImageFolder(root=dataroot,
-                           transform=transforms.Compose([
-                               transforms.Resize(image_size),
-                               transforms.CenterCrop(image_size),
-                               transforms.ToTensor(),
-                               transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
-                           ]))
 # Create the dataloader
 dataloader = torch.utils.data.DataLoader(
     FashionDataset(
