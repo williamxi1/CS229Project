@@ -123,6 +123,7 @@ generator.apply(weights_init_normal)
 discriminator.apply(weights_init_normal)
 
 # Configure data loader
+print("issue here?")
 dataloader = torch.utils.data.DataLoader(
     FashionDataset(
         "../data/fashion-dataset/shoesResized.csv",
@@ -134,6 +135,7 @@ dataloader = torch.utils.data.DataLoader(
     batch_size=opt.batch_size,
     shuffle=True
 )
+print("maybe")
 
 # Optimizers
 optimizer_G = torch.optim.Adam(generator.parameters(), lr=opt.lr, betas=(opt.b1, opt.b2))
