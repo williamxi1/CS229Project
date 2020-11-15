@@ -78,7 +78,7 @@ class FashionDataset(Dataset):
                                 self.fashion_frame.iloc[idx, 0])
         image = io.imread(img_name)
         #print(image.shape)
-        image = np.expand_dims(image, axis = 2)
+        #image = np.expand_dims(image, axis = 2)
         #print(image.shape)
         catagory = self.fashion_frame.iloc[idx, 1]
         sample = {'image': image, 'category': catagory}
