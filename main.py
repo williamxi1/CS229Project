@@ -125,8 +125,8 @@ discriminator.apply(weights_init_normal)
 # Configure data loader
 dataloader = torch.utils.data.DataLoader(
     FashionDataset(
-        "../data/fashion-dataset/bagsResized.csv",
-        "../data/fashion-dataset/BagsResized",
+        "../data/fashion-dataset/shoesResized.csv",
+        "../data/fashion-dataset/ShoesResized",
         transform=transforms.Compose(
             [transforms.ToTensor(),
              transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])
@@ -213,5 +213,5 @@ for epoch in range(opt.n_epochs):
 for i  in range(1000) :
     z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
     gen_imgs = generator(z)
-    save_image(gen_imgs.data,"../GENimages/%d.png" % i, nrow = 5, normalize = True)
+    save_image(gen_imgs.data,"../GENbags/%d.png" % i, nrow = 5, normalize = True)
 
