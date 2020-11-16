@@ -213,5 +213,5 @@ for epoch in range(opt.n_epochs):
 for i  in range(1000) :
     z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
     gen_imgs = generator(z)
-    save_image(gen_imgs.data,"../GENbags/%d.png" % i, nrow = 5, normalize = True)
+    save_image(gen_imgs.data,"../GENShoes/%d.png" % i, nrow = 5, normalize = True)
 
