@@ -148,8 +148,10 @@ print(generator)
 # ----------
 #  Training
 # ----------
+#this Line new:
 
-for epoch in range(opt.n_epochs):
+temp = None
+for epoch in  range(1): #range(opt.n_epochs):
     for i, sample in enumerate(dataloader):
         imgs = sample["image"]
         # Adversarial ground truths
@@ -169,7 +171,8 @@ for epoch in range(opt.n_epochs):
 
         # Sample noise as generator input
         z = Variable(Tensor(np.random.normal(0, 1, (imgs.shape[0], opt.latent_dim))))
-
+        if temp == None:
+            temp = imgs.shape[0]
         # Generate a batch of images
         #print("Gen Batch")
         gen_imgs = generator(z)
@@ -206,4 +209,9 @@ for epoch in range(opt.n_epochs):
         batches_done = epoch * len(dataloader) + i
         if batches_done % opt.sample_interval == 0:
             save_image(gen_imgs.data[:25], "images/%d.png" % batches_done, nrow=5, normalize=True)
+
+for i  in range(1000) :
+    z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
+    gen_imgs = generator(z)
+    save_image(gen_imgs.data,"GENimages/%d.png" % i, nrow = 5, normalize = True)
 
