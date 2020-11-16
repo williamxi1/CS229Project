@@ -151,7 +151,7 @@ print(generator)
 #this Line new:
 
 temp = None
-for epoch in  range(1): #range(opt.n_epochs):
+for epoch in range(opt.n_epochs):
     for i, sample in enumerate(dataloader):
         imgs = sample["image"]
         # Adversarial ground truths
