@@ -5,10 +5,10 @@ filenames = os.listdir("./images_train/train")
 categories = []
 for filename in filenames:
     category = filename.split('.')[0]
-    if category == 'max':
-        categories.append('Max')
-    elif category == 'will':
-        categories.append('Will')
+    if category == 'bag':
+        categories.append('bag')
+    elif category == 'shoe':
+        categories.append('shoe')
     else:
         continue
 
@@ -27,10 +27,10 @@ filenames = os.listdir("./images_validation/validation")
 categories = []
 for filename in filenames:
     category = filename.split('.')[0]
-    if category == 'max':
-        categories.append('Max')
-    elif category == 'will':
-        categories.append('Will')
+    if category == 'bag':
+        categories.append('bag')
+    elif category == 'shoe':
+        categories.append('shoe')
     else:
         continue
 
@@ -47,10 +47,10 @@ filenames = os.listdir("./images_test/test")
 categories = []
 for filename in filenames:
     category = filename.split('.')[0]
-    if category == 'max':
-        categories.append('Max')
-    elif category == 'will':
-        categories.append('Will')
+    if category == 'bag':
+        categories.append('bag')
+    elif category == 'shoe':
+        categories.append('shoe')
     else:
         continue
 
