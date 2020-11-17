@@ -151,7 +151,7 @@ print(generator)
 #this Line new:
 
 temp = None
-for epoch in range(opt.n_epochs):
+for epoch in  range(1):#range(opt.n_epochs):
     for i, sample in enumerate(dataloader):
         imgs = sample["image"]
         # Adversarial ground truths
@@ -213,5 +213,5 @@ for epoch in range(opt.n_epochs):
 for i  in range(1000) :
     z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
     gen_imgs = generator(z)
-    save_image(gen_imgs.data,"../GENShoes/%d.png" % i, nrow = 5, normalize = True)
+    save_image(gen_imgs.data[:1],"../GENShoes/%d.png" % i, nrow = 1, normalize = True)
 
