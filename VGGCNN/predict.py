@@ -33,6 +33,7 @@ d = {0: 'Bag', 1: 'Shoe'}
 
 predictions = np.argmax(prediction_prob, axis=1)
 predictions = [d[predict] for predict in predictions]
+print(predictions)
 predictions_df = pd.DataFrame({
     'filename': test_data['filename'],
     'prediction': predictions,
