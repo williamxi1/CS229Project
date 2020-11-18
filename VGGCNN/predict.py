@@ -11,8 +11,8 @@ from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 
 from data import train_generator, validation_generator, test_generator
 
-validation_data = pd.read_csv('validation.csv')
-test_data = pd.read_csv('test.csv')
+validation_data = pd.read_csv('validation2.csv')
+test_data = pd.read_csv('test2.csv')
 
 # Testing
 # validation_data = validation_data.head(100)
@@ -39,7 +39,7 @@ predictions_df = pd.DataFrame({
     'prediction': predictions,
     'ground truth': test_data['category']
 })
-predictions_df.to_csv('predictions.csv')
+predictions_df.to_csv('predictions2.csv')
 
-with open('predictions.txt', 'w') as file:
+with open('predictions2.txt', 'w') as file:
      print(prediction_prob, file=file)

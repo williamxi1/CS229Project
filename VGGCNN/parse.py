@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-filenames = os.listdir("./images_train/train")
+filenames = os.listdir("./images_train_2/train")
 categories = []
 for filename in filenames:
     category = filename.split('.')[0].split('_')[1]
@@ -20,10 +20,10 @@ df = pd.DataFrame({
 })
 
 df = df.sample(frac=1).reset_index(drop=True)
-df.to_csv('train.csv')
+df.to_csv('train2.csv')
 
 ##############################################
-filenames = os.listdir("./images_validation/validation")
+filenames = os.listdir("./images_validation_2/validation")
 categories = []
 for filename in filenames:
     category = filename.split('.')[0].split('_')[1]
@@ -40,10 +40,10 @@ df = pd.DataFrame({
 })
 
 df = df.sample(frac=1).reset_index(drop=True)
-df.to_csv('validation.csv')
+df.to_csv('validation2.csv')
 
 ##############################################
-filenames = os.listdir("./images_test/test")
+filenames = os.listdir("./images_test_2/test")
 categories = []
 for filename in filenames:
     category = filename.split('.')[0].split('_')[1]
@@ -60,4 +60,4 @@ df = pd.DataFrame({
 })
 
 df = df.sample(frac=1).reset_index(drop=True)
-df.to_csv('test.csv')
+df.to_csv('test2.csv')
