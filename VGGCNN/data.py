@@ -16,7 +16,7 @@ data_generator = ImageDataGenerator(preprocessing_function=preprocess_input)
 
 train_generator = data_generator.flow_from_dataframe(
     train_df,
-    "images_train_2/train",
+    "images_train/train",
     x_col='filename',
     y_col='category',
     target_size=(image_size, image_size),
@@ -26,7 +26,7 @@ train_generator = data_generator.flow_from_dataframe(
 
 validation_generator = data_generator.flow_from_dataframe(
     validation_df,
-    "images_validation_2/validation",
+    "images_validation/validation",
     x_col='filename',
     y_col='category',
     target_size=(image_size, image_size),
@@ -36,7 +36,7 @@ validation_generator = data_generator.flow_from_dataframe(
 
 test_generator = data_generator.flow_from_dataframe(
     test_df,
-    "images_test_2/test",
+    "images_test/test",
     x_col='filename',
     y_col='category',
     target_size=(image_size, image_size),
