@@ -4,9 +4,9 @@ import itertools
 from tensorflow.python.keras.applications.resnet import preprocess_input
 from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 
-train_df = pd.read_csv('train2.csv')
-validation_df = pd.read_csv('validation2.csv')
-test_df = pd.read_csv('test2.csv')
+train_df = pd.read_csv('train.csv')
+validation_df = pd.read_csv('validation.csv')
+test_df = pd.read_csv('test.csv')
 
 # train_df = train_df.head(100)
 # validation_df = validation_df.head(100)
