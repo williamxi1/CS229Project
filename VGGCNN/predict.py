@@ -27,7 +27,7 @@ model.add(ResNet50(include_top=False, pooling='avg', weights=resnet_weights_path
 model.add(Dense(num_classes, activation='softmax'))
 model.load_weights(checkpoint_path)
 
-prediction_prob = model.predict(test_generator, steps = 8, verbose = 1)
+prediction_prob = model.predict(test_generator, steps = 110, verbose = 1)
 
 d = {0: 'Bag', 1: 'Shoe'}
 
