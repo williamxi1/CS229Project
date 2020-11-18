@@ -17,7 +17,7 @@ test_data = pd.read_csv('test2.csv')
 # Testing
 # validation_data = validation_data.head(100)
 
-checkpoint_path = "model_checkpoints/cp-0002.ckpt"
+checkpoint_path = "model_checkpoints/cp-0015.ckpt"
 resnet_weights_path = 'resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
 num_classes = 2
 
@@ -39,7 +39,7 @@ predictions_df = pd.DataFrame({
     'prediction': predictions,
     'ground truth': test_data['category']
 })
-predictions_df.to_csv('predictions2.csv')
+predictions_df.to_csv('predictions2_orig.csv')
 
 with open('predictions2.txt', 'w') as file:
      print(prediction_prob, file=file)

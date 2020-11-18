@@ -21,7 +21,7 @@ cp_callback = ModelCheckpoint(
     filepath=checkpoint_path,
     verbose=1,
     save_weights_only=True,
-    period=1)
+    period=5)
 
 num_classes = 2
 resnet_weights_path = 'resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'
@@ -42,7 +42,7 @@ model.save_weights(checkpoint_path.format(epoch=0))
 model.fit(
         train_generator,
         steps_per_epoch=26,
-        epochs=4,
+        epochs=15,
         validation_data=validation_generator,
         callbacks=[cp_callback],
         validation_steps=6)
