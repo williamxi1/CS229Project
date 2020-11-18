@@ -21,7 +21,7 @@ cp_callback = ModelCheckpoint(
     filepath=checkpoint_path,
     verbose=1,
     save_weights_only=True,
-    period=2)
+    period=1)
 
 num_classes = 2
 resnet_weights_path = 'resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5'

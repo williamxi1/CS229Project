@@ -10,7 +10,7 @@
 8,20823_shoe_orig.jpg,Shoe,shoe
 9,20839_shoe_orig.jpg,Shoe,shoe
 10,1730_shoe_orig.jpg,Shoe,shoe
-11,47411_bag_orig.jpg,Shoe,bag
+11,47411_bag_orig.jpg,Bag,bag
 12,1654_shoe_orig.jpg,Shoe,shoe
 13,17670_shoe_orig.jpg,Shoe,shoe
 14,18421_shoe_orig.jpg,Shoe,shoe
@@ -80,7 +80,7 @@
 78,17037_shoe_orig.jpg,Shoe,shoe
 79,19045_shoe_orig.jpg,Shoe,shoe
 80,20757_shoe_orig.jpg,Shoe,shoe
-81,47956_bag_orig.jpg,Bag,bag
+81,47956_bag_orig.jpg,Shoe,bag
 82,17409_shoe_orig.jpg,Shoe,shoe
 83,17821_shoe_orig.jpg,Shoe,shoe
 84,1802_shoe_orig.jpg,Shoe,shoe
@@ -142,8 +142,8 @@
 140,18483_shoe_orig.jpg,Shoe,shoe
 141,18484_shoe_orig.jpg,Shoe,shoe
 142,20697_shoe_orig.jpg,Shoe,shoe
-143,47761_bag_orig.jpg,Bag,bag
-144,47413_bag_orig.jpg,Bag,bag
+143,47761_bag_orig.jpg,Shoe,bag
+144,47413_bag_orig.jpg,Shoe,bag
 145,17756_shoe_orig.jpg,Shoe,shoe
 146,18546_shoe_orig.jpg,Shoe,shoe
 147,20265_shoe_orig.jpg,Shoe,shoe
@@ -216,7 +216,7 @@
 214,17763_shoe_orig.jpg,Shoe,shoe
 215,17697_shoe_orig.jpg,Shoe,shoe
 216,47724_bag_orig.jpg,Bag,bag
-217,47896_bag_orig.jpg,Bag,bag
+217,47896_bag_orig.jpg,Shoe,bag
 218,20279_shoe_orig.jpg,Shoe,shoe
 219,47916_bag_orig.jpg,Bag,bag
 220,19353_shoe_orig.jpg,Shoe,shoe
@@ -294,7 +294,7 @@
 292,20676_shoe_orig.jpg,Shoe,shoe
 293,17701_shoe_orig.jpg,Shoe,shoe
 294,18538_shoe_orig.jpg,Shoe,shoe
-295,47420_bag_orig.jpg,Bag,bag
+295,47420_bag_orig.jpg,Shoe,bag
 296,17700_shoe_orig.jpg,Shoe,shoe
 297,17829_shoe_orig.jpg,Shoe,shoe
 298,1785_shoe_orig.jpg,Shoe,shoe
@@ -347,7 +347,7 @@
 345,18548_shoe_orig.jpg,Shoe,shoe
 346,47921_bag_orig.jpg,Bag,bag
 347,47401_bag_orig.jpg,Shoe,bag
-348,47946_bag_orig.jpg,Shoe,bag
+348,47946_bag_orig.jpg,Bag,bag
 349,18411_shoe_orig.jpg,Shoe,shoe
 350,19940_shoe_orig.jpg,Shoe,shoe
 351,20441_shoe_orig.jpg,Shoe,shoe
@@ -404,7 +404,7 @@
 402,18476_shoe_orig.jpg,Shoe,shoe
 403,18473_shoe_orig.jpg,Shoe,shoe
 404,17982_shoe_orig.jpg,Shoe,shoe
-405,48130_bag_orig.jpg,Bag,bag
+405,48130_bag_orig.jpg,Shoe,bag
 406,17015_shoe_orig.jpg,Shoe,shoe
 407,17832_shoe_orig.jpg,Shoe,shoe
 408,20688_shoe_orig.jpg,Shoe,shoe
@@ -413,7 +413,7 @@
 411,17020_shoe_orig.jpg,Shoe,shoe
 412,17695_shoe_orig.jpg,Shoe,shoe
 413,17844_shoe_orig.jpg,Shoe,shoe
-414,47917_bag_orig.jpg,Bag,bag
+414,47917_bag_orig.jpg,Shoe,bag
 415,17656_shoe_orig.jpg,Shoe,shoe
 416,20705_shoe_orig.jpg,Shoe,shoe
 417,18420_shoe_orig.jpg,Shoe,shoe
@@ -432,7 +432,7 @@
 430,17765_shoe_orig.jpg,Shoe,shoe
 431,47434_bag_orig.jpg,Bag,bag
 432,18482_shoe_orig.jpg,Shoe,shoe
-433,47911_bag_orig.jpg,Bag,bag
+433,47911_bag_orig.jpg,Shoe,bag
 434,20689_shoe_orig.jpg,Shoe,shoe
 435,47431_bag_orig.jpg,Bag,bag
 436,18561_shoe_orig.jpg,Shoe,shoe
@@ -505,7 +505,7 @@
 503,18545_shoe_orig.jpg,Shoe,shoe
 504,20754_shoe_orig.jpg,Shoe,shoe
 505,18567_shoe_orig.jpg,Shoe,shoe
-506,47732_bag_orig.jpg,Bag,bag
+506,47732_bag_orig.jpg,Shoe,bag
 507,17035_shoe_orig.jpg,Shoe,shoe
 508,20856_shoe_orig.jpg,Shoe,shoe
 509,18475_shoe_orig.jpg,Shoe,shoe
@@ -523,7 +523,7 @@
 521,20706_shoe_orig.jpg,Shoe,shoe
 522,18536_shoe_orig.jpg,Shoe,shoe
 523,20762_shoe_orig.jpg,Shoe,shoe
-524,47412_bag_orig.jpg,Bag,bag
+524,47412_bag_orig.jpg,Shoe,bag
 525,19902_shoe_orig.jpg,Shoe,shoe
 526,18564_shoe_orig.jpg,Shoe,shoe
 527,18873_shoe_orig.jpg,Shoe,shoe
