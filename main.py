@@ -216,7 +216,7 @@ for epoch in range(opt.n_epochs):
 #     z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
 #     gen_imgs = generator(z)
 #     save_image(gen_imgs.data[:1],"../GENBags/%d.png" % i, nrow = 1, normalize = True)
-plt.figure(fig= (10,5))
+plt.figure(figsize = (10,5))
 plt.title("Generator and Discriminator Loss During Training")
 plt.plot(G_losses, label = "G")
 plt.plot(D_losses, label = "D")
