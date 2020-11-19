@@ -4,11 +4,11 @@ import os
 filenames = os.listdir("./images_train/train")
 categories = []
 for filename in filenames:
-    category = filename.split('.')[0]
-    if category == 'max':
-        categories.append('Max')
-    elif category == 'will':
-        categories.append('Will')
+    category = filename.split('.')[0].split('_')[1]
+    if category == 'bag':
+        categories.append('bag')
+    elif category == 'shoe':
+        categories.append('shoe')
     else:
         continue
 
@@ -26,11 +26,11 @@ df.to_csv('train.csv')
 filenames = os.listdir("./images_validation/validation")
 categories = []
 for filename in filenames:
-    category = filename.split('.')[0]
-    if category == 'max':
-        categories.append('Max')
-    elif category == 'will':
-        categories.append('Will')
+    category = filename.split('.')[0].split('_')[1]
+    if category == 'bag':
+        categories.append('bag')
+    elif category == 'shoe':
+        categories.append('shoe')
     else:
         continue
 
@@ -46,11 +46,11 @@ df.to_csv('validation.csv')
 filenames = os.listdir("./images_test/test")
 categories = []
 for filename in filenames:
-    category = filename.split('.')[0]
-    if category == 'max':
-        categories.append('Max')
-    elif category == 'will':
-        categories.append('Will')
+    category = filename.split('.')[0].split('_')[1]
+    if category == 'bag':
+        categories.append('bag')
+    elif category == 'shoe':
+        categories.append('shoe')
     else:
         continue
 

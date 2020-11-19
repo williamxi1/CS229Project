@@ -27,12 +27,13 @@ model.add(ResNet50(include_top=False, pooling='avg', weights=resnet_weights_path
 model.add(Dense(num_classes, activation='softmax'))
 model.load_weights(checkpoint_path)
 
-prediction_prob = model.predict(test_generator, steps = 8, verbose = 1)
+prediction_prob = model.predict(test_generator, steps = 110, verbose = 1)
 
-d = {0: 'Max', 1: 'Will'}
+d = {0: 'Bag', 1: 'Shoe'}
 
 predictions = np.argmax(prediction_prob, axis=1)
 predictions = [d[predict] for predict in predictions]
+print(predictions)
 predictions_df = pd.DataFrame({
     'filename': test_data['filename'],
     'prediction': predictions,

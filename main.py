@@ -125,8 +125,8 @@ discriminator.apply(weights_init_normal)
 # Configure data loader
 dataloader = torch.utils.data.DataLoader(
     FashionDataset(
-        "../data/fashion-dataset/shoesResized.csv",
-        "../data/fashion-dataset/ShoesResized",
+        "../data/fashion-dataset/bagsResized.csv",
+        "../data/fashion-dataset/BagsResized",
         transform=transforms.Compose(
             [transforms.ToTensor(),
              transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])
@@ -149,10 +149,9 @@ print(generator)
 #  Training
 # ----------
 #this Line new:
-
-temp = None
-G_losses= []
+G_losses = []
 D_losses = []
+
 for epoch in range(opt.n_epochs):
     for i, sample in enumerate(dataloader):
         imgs = sample["image"]
@@ -173,8 +172,6 @@ for epoch in range(opt.n_epochs):
 
         # Sample noise as generator input
         z = Variable(Tensor(np.random.normal(0, 1, (imgs.shape[0], opt.latent_dim))))
-        if temp == None:
-            temp = imgs.shape[0]
         # Generate a batch of images
         #print("Gen Batch")
         gen_imgs = generator(z)
@@ -214,6 +211,7 @@ for epoch in range(opt.n_epochs):
         if batches_done % opt.sample_interval == 0:
             save_image(gen_imgs.data[:25], "images/%d.png" % batches_done, nrow=5, normalize=True)
 
+
 # for i  in range(1000) :
 #     z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
 #     gen_imgs = generator(z)
@@ -225,4 +223,5 @@ plt.plot(D_losses, label = "D")
 plt.xlabel("Iterations")
 plt.ylabel("Loss")
 plt.legend()
-plt.savefig("GanLossShoe.png")
+plt.savefig("GanLossBag.png")
+
