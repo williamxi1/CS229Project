@@ -245,3 +245,4 @@ for epoch in range(num_epochs):
             save_image(fake.data[:25], "images/%d.png" % batches_done, nrow=5, normalize=True)
 
         iters += 1
+

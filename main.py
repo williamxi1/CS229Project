@@ -23,8 +23,8 @@ from mapDataset import ToTensor, Rescale, FashionDataset
 #os.makedirs("images", exist_ok=True)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--n_epochs", type=int, default=200, help="number of epochs of training")
-parser.add_argument("--batch_size", type=int, default=64, help="size of the batches")
+parser.add_argument("--n_epochs", type=int, default=20, help="number of epochs of training")
+parser.add_argument("--batch_size", type=int, default=16, help="size of the batches")
 parser.add_argument("--lr", type=float, default=0.0002, help="adam: learning rate")
 parser.add_argument("--b1", type=float, default=0.5, help="adam: decay of first order momentum of gradient")
 parser.add_argument("--b2", type=float, default=0.999, help="adam: decay of first order momentum of gradient")
@@ -125,8 +125,8 @@ discriminator.apply(weights_init_normal)
 # Configure data loader
 dataloader = torch.utils.data.DataLoader(
     FashionDataset(
-        "../data/fashion-dataset/bagsResized.csv",
-        "../data/fashion-dataset/BagsResized",
+        "../data/fashion-dataset/shoesResized.csv",
+        "../data/fashion-dataset/ShoesResized",
         transform=transforms.Compose(
             [transforms.ToTensor(),
              transforms.Normalize([0.5,0.5,0.5], [0.5,0.5,0.5])
@@ -149,6 +149,9 @@ print(generator)
 #  Training
 # ----------
 #this Line new:
+G_losses = []
+D_losses = []
+
 
 temp = None
 for epoch in range(opt.n_epochs):
@@ -205,13 +208,25 @@ for epoch in range(opt.n_epochs):
             "[Epoch %d/%d] [Batch %d/%d] [D loss: %f] [G loss: %f]"
             % (epoch, opt.n_epochs, i, len(dataloader), d_loss.item(), g_loss.item())
         )
+        G_losses.append(g_loss.item())
+        D_losses.append(d_loss.item())
 
         batches_done = epoch * len(dataloader) + i
         if batches_done % opt.sample_interval == 0:
             save_image(gen_imgs.data[:25], "images/%d.png" % batches_done, nrow=5, normalize=True)
 
-for i  in range(1000) :
-    z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
-    gen_imgs = generator(z)
-    save_image(gen_imgs.data[:1],"../GENBags/%d.png" % i, nrow = 1, normalize = True)
+#for i  in range(1000) :
+#    z = Variable(Tensor(np.random.normal(0, 1, (temp , opt.latent_dim))))
+#    gen_imgs = generator(z)
+#    save_image(gen_imgs.data[:1],"../GENBags/%d.png" % i, nrow = 1, normalize = True)
+
+plt.figure(figsize=(10,5))
+plt.title("Generator and Discriminator Loss During Training")
+plt.plot(G_losses,label="G")
+plt.plot(D_losses,label="D")
+plt.xlabel("iterations")
+plt.ylabel("Loss")
+plt.legend()
+plt.savefig('GANLossShoe.png')
+plt.show()
 
