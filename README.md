@@ -1,5 +1,3 @@
 # CS229Project
 
-Hi 
-
-Hi
+Utilizing GAN to artificially create new datapoints
